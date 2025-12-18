@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Avanish | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0d0d0d;
+  color:white;
+}
+
+/* ===== NAVBAR ===== */
+header{
+  position:sticky;
+  top:0;
+  background:#0d0d0d;
+  z-index:100;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 10%;
+}
+
+.logo{
+  color:#ff4d4d;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+}
+
+.navbar a:hover{
+  color:#ff4d4d;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px 10%;
+  gap:60px;
+}
+
+.hero-text h4{
+  color:#aaa;
+  letter-spacing:2px;
+}
+
+.hero-text h1{
+  font-size:3rem;
+  margin:10px 0;
+}
+
+.hero-text h2{
+  font-weight:300;
+  color:#d9d9d9;
+}
+
+/* Typing Effect */
+#typing{
+  color:#ff4d4d;
+  border-right:3px solid #ff4d4d;
+  padding-right:6px;
+  animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+
+/* ===== BIG RIGHT IMAGE ===== */
+.hero-image{
+  position:relative;
+}
+
+.hero-image::before{
+  content:'';
+  position:absolute;
+  width:480px;
+  height:90vh;
+  background:#ff4d4d;
+  filter:blur(160px);
+  z-index:-1;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.hero-image img{
+  width:420px;
+  height:85vh;          /* FULL SCREEN FEEL */
+  object-fit:cover;
+  object-position:center;
+  border-radius:16px;
+  padding:4px;
+  background:linear-gradient(135deg,#ff4d4d,#ff9a9a,#ff4d4d);
+  filter:grayscale(100%);
+  box-shadow:0 30px 80px rgba(255,77,77,0.45);
+  transition:0.5s ease;
+}
+
+.hero-image img:hover{
+  filter:grayscale(0%);
+  transform:translateY(-6px) scale(1.02);
+}
+
+/* ===== SECTIONS ===== */
+.section{
+  padding:80px 10%;
+  text-align:center;
+}
+
+.dark{
+  background:#141414;
+}
+
+.section-title{
+  font-size:2.4rem;
+  color:#ff4d4d;
+  margin-bottom:20px;
+}
+
+/* ===== ABOUT ===== */
+.about-text{
+  max-width:800px;
+  margin:auto;
+  line-height:1.7;
+  color:#d9d9d9;
+}
+
+/* ===== SKILLS ===== */
+.skills-box{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+
+.skill{
+  padding:12px 25px;
+  border:1px solid #ff4d4d;
+  border-radius:30px;
+}
+
+.skill:hover{
+  background:#ff4d4d;
+}
+
+/* ===== CONTACT ===== */
+.contact-info{
+  margin-bottom:25px;
+  font-size:18px;
+}
+
+.contact-info a{
+  color:#ff4d4d;
+  text-decoration:none;
+}
+
+.contact-form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:12px;
+  border:none;
+  border-radius:5px;
+}
+
+.contact-form button{
+  padding:12px;
+  background:#ff4d4d;
+  border:none;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.contact-form button:hover{
+  background:#ff1a1a;
+}
+
+/* ===== SOCIAL ===== */
+.social-links{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  padding:10px 18px;
+  border-radius:30px;
+  border:1px solid #ff4d4d;
+  color:white;
+  text-decoration:none;
+}
+
+.social-links a:hover{
+  background:#ff4d4d;
+}
+
+.resume-btn{
+  background:#ff4d4d;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  font-size:26px;
+  padding:15px 18px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+  .hero-image img{
+    width:260px;
+    height:60vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+  <div class="logo">AVANISH PRAJAPATI</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h4>DATA ANALYST</h4>
+    <h1>Hi, I'm <span id="typing"></span></h1>
+    <h2>B.Sc (Hons) Computer Science</h2>
+    <h2>Delhi University</h2>
+  </div>
+
+  <div class="hero-image">
+    <img src="avanish.jpeg" alt="Avanish">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<h2 class="section-title">About Me</h2>
+<p class="about-text">
+I am <b>Avanish</b>, pursuing <b>B.Sc (Hons) Computer Science</b> from a
+<b>Delhi University</b> college. I have strong interest in programming,
+problem solving and web development. Skilled in <b>C++, Python and MS Excel</b>,
+and actively preparing for internships and technical roles.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section dark">
+<h2 class="section-title">My Skills</h2>
+<div class="skills-box">
+  <div class="skill">C++</div>
+  <div class="skill">Python</div>
+  <div class="skill">MS Excel</div>
+  <div class="skill">HTML</div>
+  <div class="skill">CSS</div>
+  <div class="skill">JavaScript</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-info">
+📞 <a href="tel:9569092645">9569092645</a><br><br>
+✉ <a href="mailto:avanishpra75@gmail.com">avanishpra75@gmail.com</a>
+</div>
+
+<form class="contact-form">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea rows="4" placeholder="Your Message"></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+<div class="social-links">
+  <a href="https://wa.me/919569092645" target="_blank">WhatsApp</a>
+  <a href="https://www.linkedin.com/in/avanish-prajapati-0971a132b" target="_blank">LinkedIn</a>
+  <a href="https://github.com/" target="_blank">GitHub</a>
+  <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+</div>
+</section>
+
+<a href="https://wa.me/919569092645" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+const text = "Avanish";
+let i = 0;
+const speed = 120;
+function typeEffect(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, speed);
+  }
+}
+typeEffect();
+</script>
+
+</body>
+</html>
