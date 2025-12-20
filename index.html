@@ -310,6 +310,32 @@ and actively preparing for internships and technical roles.
   <div class="skill">CSS</div>
   
 </div>
+</section><section id="resources" class="section dark">
+<h2 class="section-title">DU CS PYQs & Notes</h2>
+
+<input type="text" id="resourceSearch" class="resource-search"
+placeholder="Search subject or year (e.g. DS, 2023)">
+
+<div class="accordion">
+
+  <div class="accordion-item">
+    <button class="accordion-header">Semester 1</button>
+    <div class="accordion-body">
+      <a href="du-pyq/cs/sem1/programming_fundamentals_2022.pdf" target="_blank">
+        Programming Fundamentals (2022)
+      </a>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">CS Notes</button>
+    <div class="accordion-body">
+      <a href="du-pyq/notes/cpp_notes.pdf" target="_blank">C++ Notes</a>
+      <a href="du-pyq/notes/python_notes.pdf" target="_blank">Python Notes</a>
+    </div>
+  </div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
@@ -350,8 +376,22 @@ function typeEffect(){
   }
 }
 typeEffect();
+  document.querySelectorAll(".accordion-header").forEach(btn=>{
+  btn.onclick=()=> {
+    const body=btn.nextElementSibling;
+    body.style.display=body.style.display==="block"?"none":"block";
+  };
+});
+
+document.getElementById("resourceSearch").onkeyup=function(){
+  const v=this.value.toLowerCase();
+  document.querySelectorAll(".accordion-body a").forEach(a=>{
+    a.style.display=a.textContent.toLowerCase().includes(v)?"block":"none";
+  });
+  };
 </script>
 
 </body>
 </html>
+
 
